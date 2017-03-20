@@ -1,28 +1,29 @@
 console.log("my tracery demo");
 
-
+//ideas: 
+// a cloak of gone
 
 $(document).ready(function () {
 
     var grammar = {
-        "origin": ["#treasure#"],
+        "origin": ["#normalTreasure#"],
         "treasure": ["#normalTreasure#", "#normalTreasurePl#", "#liquidTreasure#", "#amberTreasure#"], 
-        "normalTreasurePl": ["A #container# of #magicAdj# #magicNounOrNot# #singthings.s#"],
-        "normalTreasure": ["A #magicAdj# #magicNounOrNot# #singthings#"],
-        "amberTreasure": ["A #caughtThings# encased in amber"],
+        "normalTreasure": ["A #magicAdj# #magicNounOrNot# #singthing#"],
+        "normalTreasurePl": ["A #container# of #magicAdj# #magicNounOrNot# #singthing.s#"],
+        "amberTreasure": ["A #caughtThing# encased in amber"],
         "liquidTreasure": ["A #liquidContainer# of #magicAdj# #liquidThings#"],
         "container": "pouch|rucksack|glove compartment|bag|locket|briefcase|#matMod# #hardMat# #box#|book|snuff tin|#liquidContainer#".split("|"),
+        "liquidContainer": ["bottle", "vial", "syringe"],  
         "box":"chest|box|jewellery box|music box".split("|"),
         "hardMat": "black ash|ivory|mahogany|tin|steel|black birch|walnut|ironwood|desert ironwood|red cedar|white oak|teak|bamboo".split("|"),  
         "matMod": "|scratched|worn|beaten-up|pristine|polished|fire-touched".split("|"),
-        "liquidContainer": ["bottle", "vial", "syringe"],  
         "promiseType": ["","rash","unspoken","hellbound", "unspent", "tear-stained", "whispering", "crow", "fairy","seductive", "insane", "unfulfilled", "broken", "final"],
-        "caughtThings": ["fairy", "sprite", "wisp", "#animal# tear", "#natureNoun# spirit"],
+        "caughtThing": ["fairy", "sprite", "wisp", "#animal# tear", "#natureNoun# spirit"],
         "liquidThings": ["#allCreature# blood", "#allCreature# tears", "#mythBeast# ichor"],
         "liquidPrep": " | | | | | | | | | |reduced|concentrated|boiled|evaporated|distilled|condensed|frozen".split("|"),
         "allCreature": ["#animal#", "#mythBeast#"],
-        "magicAdj": "ancient|royal|ethereal|subliminal|sidhe|unspoken|unthere|unholy|leaping|glitching|whispering|blood-stained|magical|fae|cursed|dark|divine|celestial|Dangerous|cold".split("|"),
-        "singthings": "blessing|mask|pendant|mirror|horn|gem|garland|pebble|harp|petal|demon|bean|potion|#promiseType# promise|true name|portal|scroll|coin".split("|"),
+        "magicAdj": "blood-drinking|murmuring|ancient|royal|ethereal|subliminal|sidhe|unspoken|unthere|unholy|glitching|whispering|blood-stained|magical|fae|cursed|dark|divine|celestial|cold".split("|"),
+        "singthing": "light|crossbow|snow globe|love letter|letter|treasure map|brooch|map|saddle|music box|miniature chest|children's book|monacle|toy soldier|crystal|egg|breastplate|painting|earring|tiara|crown|animal statue|doll|deed|bird-cage|head|manual|relic|flower|wedding dress|chess set|puzzle box|crystal ball|straight-razor|journal|snare|dagger|statuette|symbol|cloak|riddle|word|blessing|mask|pendant|mirror|horn|gem|garland|pebble|harp|petal|demon|bean|potion|#promiseType# promise|true name|portal|scroll|coin".split("|"),
         "magicNounOrNot": ["", "#magicNoun#"],
         "magicNoun": "time|demon|fairy|star|#mythBeast#".split("|"), 
         "mythBeast": "sprite|wisp|leprechaun|ogre|troll|vampire|werewolf|ghost|mermaid|fairy|pixie|satyr|dryad|cheshire cat".split("|"),
