@@ -51,7 +51,7 @@ $(document).ready(function () {
         var gr = tracery.createGrammar(grammar);
         var attempts = 0;
         var matching = 0;
-        while(attempts < 300 && matching < 20) {
+        while(attempts < 300 && matching < 10) {
             attempts ++;
             var s = gr.flatten("#origin#");
             if ((s.indexOf(sought) > -1) || !sought || sought.length == 0) {
