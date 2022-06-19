@@ -7,9 +7,9 @@ $(document).ready(function () {
         "origin": ["#treasure#", "#treasure#, #history#"],
         "treasure": "#normalTreasure#|#normalTreasurePl#|#liquidTreasure#|#trappedTreasure#".split(pipe), 
         "history": ["fetched back from #strangeWhen#", "passed down through generations of warring #mythBeast#", "thought long lost in the #event#", "forged by #mythBeast#", "born in the #event#", "dating from the #event#", "from the never", "forgotten by man", "long hidden by #mythBeast#", "once fought over by #mythBeast#", "once treasured by #mythBeastMaybeDouble#"],
-        "event": ["#strangeWhen#", "#battle#", "time of the #mythBeast#", "last days of #mythBeast#", "All-Dark", "Night", "fire", "Last Storm", "great flood", "reset", "undertow", "reverse", "mirror-day", "Trouble", "#mythBeast# uprising", "#mythBeast# rebellion", "#mythBeast# exodus", "apocalypse", "zombie apocalypse"],
         "strangeWhen": ["time", "gone", "never", "again", "after", "before", "below", "tomorrow", "afterdark", "always"],
         "twoNouns": ["#singthing# #singthing#"],
+        "event": ["#strangeWhen#", "#battle#", "time of the #mythBeast#", "last days of #mythBeast#", "All-Dark", "Night", "fire", "Last Storm", "great flood", "reset", "undertow", "reverse", "mirror-day", "Trouble", "#mythBeast# uprising", "#mythBeast# rebellion", "#mythBeast# exodus", "apocalypse", "zombie apocalypse"],
         "battle": ["#mythBeast# killing", "last battle between #mythBeast# and #mythBeast#", "#mythBeast# war"],
         "normalTreasure": ["A #magicAdj# #magicNounOrNot# #singthing##effectOrNot#"],
         "normalTreasurePl": ["A #container# of #magicAdj# #magicNounOrNot# #singthing.s#"],
@@ -65,7 +65,7 @@ $(document).ready(function () {
 
         
         }
-        $('#grammarOut').html(JSON.stringify(grammar));
+        $('#grammarOut').html(JSON.stringify(grammar, null, 2));
     }
     
     $('#again').click(doAGrammar);
