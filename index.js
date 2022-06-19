@@ -2,7 +2,7 @@
 // a cloak of gone
 
 const pipe = "|";
-const grammar = {
+const grammarSource = {
   origin: ["#treasure#", "#treasure#, #history#"],
   treasure:
     "#normalTreasure#|#normalTreasurePl#|#liquidTreasure#|#trappedTreasure#".split(
@@ -149,29 +149,45 @@ const grammar = {
   ],
 };
 
-function doAGrammar() {
-  $("#output").html("");
-  const sought = $("#sought").val();
-  // @ts-ignore
-  const gr = tracery.createGrammar(grammar);
-  let attempts = 0;
-  let matchingCount = 0;
-  while (attempts < 300 && matchingCount < 10) {
-    attempts++;
-    const s = gr.flatten("#origin#");
-    if (s.indexOf(sought) > -1 || !sought || sought.length == 0) {
-      const div = $("<div/>", {
-        class: "outputSample",
-        html: s,
-      });
-      $("#output").append(div);
-      matchingCount++;
-    }
+function elemOrFail(id) {
+  const el = document.getElementById(id);
+  if (!el) {
+    throw new Error("Can't find required page element with id: " + id);
   }
-  $("#grammarOut").html(JSON.stringify(grammar, null, 2));
+  return el;
 }
 
-$("#again").click(doAGrammar);
+function doAGrammar() {
+  const outputElem = elemOrFail("output");
+  outputElem.innerText = "";
+
+  // @ts-ignore
+  const sought = elemOrFail("sought").value;
+  // @ts-ignore
+  const grammar = tracery.createGrammar(grammarSource);
+
+  let attemptCount = 0;
+  let matchedCount = 0;
+
+  while (attemptCount < 300 && matchedCount < 10) {
+    attemptCount++;
+    const generatedText = grammar.flatten("#origin#");
+    if (generatedText.includes(sought) || !sought || sought.length == 0) {
+      append(generatedText, outputElem);
+      matchedCount++;
+    }
+  }
+  elemOrFail("grammarOut").innerHTML = JSON.stringify(grammarSource, null, 2);
+}
+
+function append(generatedText, outputElem) {
+  const outputDiv = document.createElement("div");
+  outputDiv.className = "outputSample";
+  outputDiv.innerText = generatedText;
+  outputElem.append(outputDiv);
+}
+
+elemOrFail("again").addEventListener("click", doAGrammar);
 
 window.addEventListener("load", function () {
   doAGrammar();
