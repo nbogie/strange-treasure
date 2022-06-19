@@ -65,7 +65,7 @@ $(document).ready(function () {
 
         
         }
-        $('#grammarOut').html(JSON.stringify(grammar));
+        $('#grammarOut').html(JSON.stringify(grammar, null, 2));
     }
     
     $('#again').click(doAGrammar);
