@@ -1,5 +1,3 @@
 # strange-treasure
 
-A js text-generator of strange treasure, currently using the Tracery library.
-
-master branch is master. gh-pages is used only for github pages deployment.
+A generator of strange treasure descriptions - an experiment using Kate Compton's [Tracery](https://www.tracery.io/) library.
