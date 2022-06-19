@@ -187,7 +187,15 @@ function append(generatedText, outputElem) {
   outputElem.append(outputDiv);
 }
 
-elemOrFail("again").addEventListener("click", doAGrammar);
+const genButton = elemOrFail("generateButton");
+genButton.addEventListener("click", doAGrammar);
+
+const searchTextElem = elemOrFail("sought");
+searchTextElem.onkeydown = function (e) {
+  if (e.key == "Enter") {
+    doAGrammar();
+  }
+};
 
 window.addEventListener("load", function () {
   doAGrammar();

@@ -7,10 +7,8 @@
 
     <title>Strange Treasure - Neill's Tracery Example</title>
 
-    <!-- css -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!-- css -->    
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
     
     <link href="style.css" rel="stylesheet">
     
@@ -23,16 +21,24 @@
 </head>
 
 <body class="container-fluid">
-
+    
+    <h1>Strange Treasure</h1>
+    <button id="generateButton">Imagine more...</button>
+    <input id="sought" type="text" placeholder="optional search term"></input>
+    
     <div id="output"></div>
 
     <script src="tracery.min.js"></script>
    
-    <script  defer type="module" src='index.js'></script>
-    <button class="btn btn-primary" id="again">again</button>
-    <input class="input-control text" type="text" id="sought"></input>
+    <script defer type="module" src='index.js'></script>
     <hr>
-    <textarea id="grammarOut" cols="120" rows="20"></textarea>
+
+    <h3>How?</h3>
+    This uses the following grammar for Kate Compton's <a href="http://www.crystalcodepalace.com/traceryTut.html">Tracery</a> library.
+    <br/>
+    You can experiment with your own grammars with this library using <a href="http://tracery.io/editor/">this online editor</a>.
+    <h4>Source grammar</h4>
+    <textarea id="grammarOut" cols="120" rows="10"></textarea>
 </body>
 
 </html>
